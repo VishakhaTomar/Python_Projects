@@ -1,0 +1,11 @@
+#manipulating list using list comprehension
+
+myList=[]
+el=None
+while (str(el) != "0"):
+    el=int(input(""))
+    myList.append(el)
+
+list2 = [items*5 for items in myList if  items]
+print(list2)
+
