@@ -1,0 +1,57 @@
+sevenSegmentDic= {
+    '0':6,
+    '1':2,
+    '2':5,
+    '3':5,
+    '4':4,
+    '5':5,
+    '6':6,
+    '7':3,
+    '8':7,
+    '9':6
+    }
+
+# greatnumDic= {
+#     6: 111,                 # inference, if no of sticks are even, greatest no will be multiple of 11, if total no of...
+#     2: 1,                   # ...sticks are odd it will be combination of 71
+#     5: 71,
+#     4: 11,
+#     3: 7,
+#     7: 711
+#     }
+
+# for even stick
+    # no = [1]*totalsticks/2
+def evensum(totalsticks):
+    listOfone=[1]
+    repeat = totalsticks/2
+    newlist= listOfone*int(repeat)
+    print(*newlist,sep="")
+
+ #for odd no
+  #3: 7, 5: 71, 7:711, 9: 777/7111, 11: 71111 
+def oddsum (totalsticks):
+    arr=[]
+    for i in range(1,700,2):
+        arr.append(i)
+    newlist=listOfone*((arr.index(totalsticks))-1)
+    print("7",*newlist,sep="")
+   
+
+
+
+testcase = int(input())
+
+while(testcase > 0):
+     inputstring=input()
+     totalsticks = 0
+     listOfone=[1]
+     for i in range(len(inputstring)):
+         totalsticks= totalsticks+int(sevenSegmentDic.get(inputstring[i], 0))
+     print(totalsticks)
+     if totalsticks%2==0:
+         evensum(totalsticks)
+     else :
+         oddsum(totalsticks)
+     testcase -= 1
+    
