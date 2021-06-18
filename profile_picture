@@ -1,0 +1,18 @@
+L= int(input(""))
+
+def checkdim(a,b):
+    if a<L or b<L:
+        return "UPLOAD ANOTHER"
+    elif a>=L and b>=L and a==b:
+        return "ACCEPTED"
+    elif a>=L and b>=L and a!=b:
+        return "CROP IT"
+
+
+
+n= int(input(""))
+for i in range(n):
+    inputstring= input("")
+    dimention= inputstring.split()
+    str = checkdim(int(dimention[0]), int(dimention[1]))
+    print(str)
