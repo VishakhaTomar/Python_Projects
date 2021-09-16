@@ -1,0 +1,21 @@
+count =0
+def transform (b):
+    
+    for i in range(len(b)-1):
+        if(b[i]=='1'):
+            b[i]='0'
+            global count
+            count=count +1
+            if (b[i+1]=='0'):
+                b[i+1]='1'
+            else:
+                b[i+1]='0'
+    return b
+
+if __name__== "__main__":
+    cards= list("111111111")
+    print(cards)
+    while cards != transform(cards.copy()):
+        cards = transform(cards.copy())
+    print(cards)
+    print(count)
